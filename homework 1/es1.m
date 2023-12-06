@@ -2,6 +2,15 @@ clc;
 close all;
 clear all;
 
+% la funzoine offset serve per traslare il vettore di valori in maniera
+% tale da posizionare il treno di delta nella corretta posizione sull'asse
+% x
+% la fuunzione function_sum serve per creare il vettore di delta dato dalla
+% somma di due funzioni discrete
+% la funzione add_delta serve per posizionare una delta, con altezza data,
+% all'interno di un treno di delta
+
+
 figure, stem(offset(0, 1), offset(0, 1)), grid on
 figure, stem(offset(-5, 1), offset(0, 1)), grid on
 figure, stem(-offset(-5, 1), offset(0, 1)), grid on
