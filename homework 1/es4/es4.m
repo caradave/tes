@@ -21,12 +21,12 @@ energy_x1_norm = energyCalculation(x1_norm);
 energy_x2_norm = energyCalculation(x2_norm);
 
 r_xref = xcorr(xref, xref);
-r_x1 = xcorr(x1_norm, x1);
-r_x2 = xcorr(x2_norm, x2);
+r_x1 = xcorr(xref, x1);
+r_x2 = xcorr(xref, x2);
 
-energy_r_xref = energyCalculation(r_xref)
-energy_r_x1 = energyCalculation(r_x1)
-energy_r_x2 = energyCalculation(r_x2)
+energy_r_xref = energyCalculation(r_xref);
+energy_r_x1 = energyCalculation(r_x1);
+energy_r_x2 = energyCalculation(r_x2);
 
 alfa1_autocorrelazione = sqrt(energy_r_xref/energy_r_x1);
 alfa2_autocorrelazione = sqrt(energy_r_xref/energy_r_x2);
@@ -41,16 +41,16 @@ e_xref = sum(xref.^2);
 e_x1 = sum(x1.^2);
 e_x2 = sum(x2.^2);
 
-r_xref_audio = xcorr(xref_audio, x_ref_audio);
-r_x1_audio = xcorr(x1_audio, x1_audio);
-r_x2_audio = xcorr(x2_audio, x2_audio);
+r_xref_audio = xcorr(xref_audio, xref_audio);
+r_x1_audio = xcorr(xref_audio, x1_audio);
+r_x2_audio = xcorr(xref_audio, x2_audio);
 
-energy_r_x1_ref = energyCalculation(r_xref_audio);
+energy_r_xref_audio = energyCalculation(r_xref_audio);
 energy_r_x1_audio = energyCalculation(r_x1_audio);
 energy_r_x2_audio = energyCalculation(r_x2_audio);
 
 alfa1_autocorrelazione_audio = sqrt(energy_r_xref_audio/energy_r_x1_audio);
-alfa2_autocorrelazione = sqrt(energy_r_xref_audio/energy_r_x2_audio);
+alfa2_autocorrelazione_audio = sqrt(energy_r_xref_audio/energy_r_x2_audio);
 
 
 function energy = energyCalculation(vett)
